@@ -59,8 +59,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <img
-              src="/frontend/public/hero5.jpg"
-              alt="Hero"
+ src="/hero5.jpg" alt="Hero"
               className="rounded-xl shadow-lg"
             />
           </div>
