@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Set up your base URL — change this if you deploy to production
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000", // or "http://localhost:8000"
+  baseURL: import.meta.env.VITE_API_URL||"http://127.0.0.1:8000", // or "http://localhost:8000"
   headers: {
     "Content-Type": "application/json",
   },
