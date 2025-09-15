@@ -8,7 +8,7 @@ load_dotenv()
 app = FastAPI(
     title="Bussiness API",
 )
-origin = ["http://localhost:5173",os.getenv("FRONTEND_URL", )]
+origin = ["http://localhost:5173",os.getenv("FRONTEND_URL","https://db-site-mu.vercel.app" )]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origin, 
