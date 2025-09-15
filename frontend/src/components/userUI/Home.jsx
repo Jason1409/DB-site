@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom";
 import { getProductsPreview } from "../../services/productsService";
 import { getProjectsPreview } from "../../services/projectsApi";
-import MediaCarousel from "../../features/MediaCarousel";
+import MediaCard from "../../features/MediaCard";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [projects, setProjects] = useState([]);
@@ -71,16 +71,22 @@ export default function Home() {
 <section className="py-15 bg-[#FAF8F0]">
   <div className="container mx-auto px-6">
     <h2 className="text-3xl font-bold text-midnightBlue mb-10 text-center">
-      Our Products
+      Our services
     </h2>
    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
    {products.map((product) => (
      <a key={product.id} href="/products">
-     <div className="bg-white shadow-md rounded-lg hiver:shadow-lg transition-all  p-4 cursor-pointer">
-      <MediaCarousel images={product.images || []} videos={product.videos || []} title={product.title} 
-      category={product.category}/>
-      <h3 className="text-lg font-semibold text-midnightBlue mt-2">{product.title}</h3>
-     </div>
+     <MediaCard
+  key={product.id}
+  title={product.title}
+  images={product.images}
+  videos={product.videos}
+  category={product.category}
+  description={product.description}
+  type="service"
+  link="/products"
+/>
+
      </a>
    ))}
    </div>
@@ -190,24 +196,30 @@ export default function Home() {
   </div>
   </div>
 </section>
-      {/* ===== Projects Section ===== */}
-      <section className="py-16 bg-[#FAF8F0]" id="work">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-midnightBlue mb-10 text-center">Our Projects</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
-            {projects.map((project) => (
-              <a key={project.id} href="/projects">
-              <div className="bg-white shadow-md rounded-lg hiver:shadow-lg transition-all  p-4 cursor-pointer">
-                <MediaCarousel images={project.images || []} videos={project.videos || []} title={project.title} client={project.client}
-                />
-                <h3 className="text-lg font-semibold text-midnightBlue mt-2">{project.title}</h3>
-                <p className="text-sm text-gray-600">{project.client}</p>
-              </div>
-              </a>
-            ))}
-            </div>
-        </div>
-      </section>
+{/* ===== Projects Section ===== */}
+<section className="py-16 bg-[#FAF8F0]" id="work">
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold text-midnightBlue mb-10 text-center">
+      Our Projects
+    </h2>
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <MediaCard
+          key={project.id}
+          title={project.title}
+          images={project.images}
+          videos={project.videos}
+          category={project.category}
+          client={project.client}
+          type="project"
+          link="/projects"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
    
     </div>

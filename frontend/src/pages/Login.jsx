@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
         })
       );
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/dashboard-admin-ahts");
       }, 50);
       console.log("Login successful:", res.data);
     } else {
@@ -79,7 +79,6 @@ const handleSubmit = async (e) => {
               required
               onChange={(e) => setEmail(e.target.value.trim())}
               className="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-700 dark:text-white"
-              placeholder="admin@site.com"
             />
           </div>
 
@@ -93,7 +92,6 @@ const handleSubmit = async (e) => {
               required
               onChange={(e) => setPassword(e.target.value.trim())}
               className="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-700 dark:text-white"
-              placeholder="••••••••"
             />
           </div>
 

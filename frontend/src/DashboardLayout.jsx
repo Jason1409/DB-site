@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   function handleLogout() {
     dispatch(logout());
     localStorage.removeItem("auth");
-    navigate("/login");
+    navigate("/login-ahts");
   }
 
   return (
@@ -17,7 +17,7 @@ const DashboardLayout = () => {
       {/* Sidebar */}
       <aside className="w-56 bg-[#1e293b] text-white flex flex-col justify-between p-4">
         <div>
-          <h2 className="text-xl font-semibold mb-6 tracking-wide">Admin Panel</h2>
+          <h2 className="text-xl font-semibold mb-6 tracking-wide">Admin Dashboard</h2>
           <nav className="flex flex-col gap-3 text-sm">
             <NavLink
               to="projects"

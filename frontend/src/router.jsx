@@ -1,17 +1,18 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import PrivateRoute from "./features/PrivateRoute";
 import DashboardLayout from "./DashboardLayout";
 import PublicLayout from "./PublicLayout";
 import DashboardHome from "./pages/DashboardHome";
 import Login from "./pages/Login";
-// Public pages - keep lazy loading
+
+// Public pages - lazy load
 const Home = lazy(() => import("./components/userUI/Home"));
 const ProductsUI = lazy(() => import("./components/userUI/ProductsUI"));
 const ProjectsUI = lazy(() => import("./components/userUI/ProjectsUI"));
 const Contacts = lazy(() => import("./components/userUI/Contacts"));
 
-// Dashboard pages - normal imports (no lazy)
+// Dashboard pages - normal imports
 import Projects from "./pages/Projects/Projects";
 import Products from "./pages/products/Products";
 import ContactsList from "./pages/Contacts/ContactsList";
@@ -19,7 +20,6 @@ import ContactsList from "./pages/Contacts/ContactsList";
 const Loader = <div>Loading...</div>;
 
 const router = createBrowserRouter([
-  { path: "/", element: <Navigate to="/" replace /> },
   {
     path: "/",
     element: <PublicLayout />,
@@ -31,12 +31,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/login",
+    path: "/login-ahts",
     element: <Login />,
   },
   {
-    path: "/dashboard",
-    element: <PrivateRoute />,
+    path: "/dashboard-admin-ahts",
+    element: <PrivateRoute />,   // 🔒 Guard
     children: [
       {
         element: <DashboardLayout />,
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         ],
       },
     ],
-  }
+  },
 ]);
 
 export default router;

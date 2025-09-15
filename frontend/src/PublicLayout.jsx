@@ -1,81 +1,102 @@
 // src/PublicLayout.jsx
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { FaInstagram } from 'react-icons/fa';
-export default function PublicLayout() {
-    const [isOpen, setIsOpen] = useState(false);
-    const navLinks=[{
-        name:"Home", type:"route",to:"/"},
-        {name:"Who We Are", type:"section", to:"#about"},
-        {name:"What We Do", type:"section", to:"#services"},
-        {name:"Products",type:"route", to:"/products"},
-        {name:"Projects",type:"route", to:"/projects"},
-        {name:"Contact",type:"route", to:"/contact"},
+import { FaInstagram } from "react-icons/fa";
+import { HashLink } from "react-router-hash-link";
 
-    ];
+export default function PublicLayout() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", type: "route", to: "/" },
+    { name: "Who We Are", type: "section", to: "#about" },
+    { name: "What We Do", type: "section", to: "#services" },
+    { name: "Services", type: "route", to: "/products" },
+    { name: "Projects", type: "route", to: "/projects" },
+    { name: "Contact Us", type: "route", to: "/contact" },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F0]">
-      
       {/* ===== NAVBAR ===== */}
       <header className="sticky top-0 z-50 bg-[#0A1F44] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          
           {/* Logo */}
-          <a href="#about"
-            
-            className="text-2xl font-display weight-bold font- text-[#FFD700] tracking-wide hover:scale-105 transition-transform duration-300"
+          <HashLink
+            smooth
+            to="/#about"
+            className="text-2xl font-display font-bold text-[#FFD700] tracking-wide hover:scale-105 transition-transform duration-300"
           >
             ANEES HABIB TECHNICAL SERVICES CO.L.L.C
-          </a>
+          </HashLink>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-           <ul className="flex gap-5 text-[#fffefd] ">
-            {navLinks.map((link) => (
-             link.type === "route" ? (
-            <NavLink key={link.name} to={link.to} className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300">
-              {link.name}
-            </NavLink>
-          ) : (
-            <a key={link.name} href={link.to} className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300">
-              {link.name}
-            </a>
-          )
-            ))}
+            <ul className="flex gap-5 text-[#fffefd]">
+              {navLinks.map((link) =>
+                link.type === "route" ? (
+                  <NavLink
+                    key={link.name}
+                    to={link.to}
+                    className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300"
+                  >
+                    {link.name}
+                  </NavLink>
+                ) : (
+                  <HashLink
+                    key={link.name}
+                    smooth
+                    to={`/${link.to}`}
+                    className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300"
+                  >
+                    {link.name}
+                  </HashLink>
+                )
+              )}
             </ul>
+          </nav>
 
-             {/* Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 focus:outline-none">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white focus:outline-none"
+            >
               {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
             </button>
           </div>
-      
-      
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-[#F5EFEB] px-4 pt-2 pb-4 space-y-2 shadow-lg">
-          <ul className="flex flex-col gap-5 text-[#1a1a40]">
-            {navLinks.map((link) => (
-              link.type === "route" ? (
-                <NavLink key={link.name} to={link.to} className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300">
-                  {link.name}
-                </NavLink>
-              ) : (
-                <a key={link.name} href={link.to} className="hover:text-[#FFD700] hover:scale-105 transition-transform duration-300">
-                  {link.name}
-                </a>
-              )
-            ))}
-          </ul>
         </div>
-      )}
-          
-          </nav>
 
-        </div>
+        {/* Mobile Dropdown */}
+        {isOpen && (
+          <div className="md:hidden bg-[#0A1F44] px-6 py-4 shadow-lg">
+            <ul className="flex flex-col gap-4 text-white">
+              {navLinks.map((link) =>
+                link.type === "route" ? (
+                  <NavLink
+                    key={link.name}
+                    to={link.to}
+                    onClick={() => setIsOpen(false)}
+                    className="hover:text-[#FFD700] transition duration-200"
+                  >
+                    {link.name}
+                  </NavLink>
+                ) : (
+                  <HashLink
+                    key={link.name}
+                    smooth
+                    to={`/${link.to}`}
+                    onClick={() => setIsOpen(false)}
+                    className="hover:text-[#FFD700] transition duration-200"
+                  >
+                    {link.name}
+                  </HashLink>
+                )
+              )}
+            </ul>
+          </div>
+        )}
       </header>
 
       {/* ===== MAIN CONTENT ===== */}
@@ -86,24 +107,29 @@ export default function PublicLayout() {
       {/* ===== FOOTER ===== */}
       <footer className="bg-[#0A1F44] text-gray-300 py-10 mt-auto">
         <div className="max-w-7xl mx-auto px-6 grid gap-8 md:grid-cols-3">
-          
           {/* Column 1 */}
           <div>
-            <p className="text-1xl font-bold text-[#FFD700] mb-4">ANEES HABIB TECHNICAL SERVICES CO.L.L.C
-</p>
-            <p>DUBAI REAL ESTATE CORPORATION OFFICE OF13 621 Um Hurair Second Dubai</p>
-            <br></br>
-            <a href="mailto:aneeshabib899@gmail.com">aneeshabib899@gmail.com</a>
-            <br></br>
+            <p className="text-1xl font-bold text-[#FFD700] mb-4">
+              ANEES HABIB TECHNICAL SERVICES CO.L.L.C
+            </p>
+            <p>
+              DUBAI REAL ESTATE CORPORATION OFFICE OF13 621 Um Hurair Second
+              Dubai
+            </p>
+            <br />
+            <a href="mailto:aneeshabib899@gmail.com">
+              aneeshabib899@gmail.com
+            </a>
+            <br />
             <a href="tel:+971521136657"> +971 521 136 657 </a>
-            <br></br>
+            <br />
             <a
               href="https://instagram.com/tileco"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-2 text-gray-400 hover:text-[#ff006f] transition-colors duration-300"
             >
-              <FaInstagram size={28}/>
+              <FaInstagram size={28} />
             </a>
           </div>
 
@@ -111,10 +137,35 @@ export default function PublicLayout() {
           <div>
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="hover:text-[#FFD700] transition">Home</a></li>
-              <li><a href="/products" className="hover:text-[#FFD700] transition">Products</a></li>
-              <li><a href="/projects" className="hover:text-[#FFD700] transition">Projects</a></li>
-              <li><a href="/contact" className="hover:text-[#FFD700] transition">Contact</a></li>
+              <li>
+                <NavLink to="/" className="hover:text-[#FFD700] transition">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/products"
+                  className="hover:text-[#FFD700] transition"
+                >
+                  Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/projects"
+                  className="hover:text-[#FFD700] transition"
+                >
+                  Projects
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  className="hover:text-[#FFD700] transition"
+                >
+                  Contact
+                </NavLink>
+              </li>
             </ul>
           </div>
 
