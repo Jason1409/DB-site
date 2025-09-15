@@ -8,7 +8,7 @@ load_dotenv()
 app = FastAPI(
     title="Bussiness API",
 )
-origin = os.getenv("FRONTEND_URL", "http://localhost:5173")
+origin = ["http://localhost:5173",os.getenv("FRONTEND_URL", )]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origin, 
