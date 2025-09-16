@@ -99,17 +99,33 @@ export default function Home() {
       {/* ===== Services Section ===== */}
       <section className="py-16 bg-buttercream" id="services">
         <div className="container mx-auto px-6">
-<h2 className="text-3xl font-bold text-midnightBlue mb-6 text-center font-serif">
+<h2 className="text-3xl sm:text-3xl font-semibold text-midnightBlue text-center font-serif">
   What We Do
 </h2>
+<div className="w-16 h-1 bg-[#FFD700] mx-auto my-4 rounded"></div>
 
-<p className="mt-4 text-base sm:text-lg text-midnight/80 font-serif leading-relaxed  max-w-4xl mx-auto mb-12">
-  We bring craftsmanship and precision to every project we undertake. From sourcing and installing premium marbles to delivering flawless tiling work, we transform spaces with elegance and durability.
-  <br /><br />
-  Our skilled electrical team ensures every connection is safe, efficient, and built to last.
-  <br /><br />
-  Whether it’s enhancing the beauty of interiors or ensuring seamless functionality, we combine quality materials, expert techniques, and attention to detail to bring your vision to life.
-</p>
+<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+  <p className="text-base sm:text-lg text-midnight/80 font-serif leading-relaxed mb-4 text-center sm:text-left">
+    We bring <span className="font-semibold">craftsmanship and precision</span> 
+    to every project we undertake. From sourcing and installing premium marbles 
+    to delivering flawless tiling work, we transform spaces with elegance and durability.
+  </p>
+
+  <p className="text-base sm:text-lg text-midnight/80 font-serif leading-relaxed mb-4 text-center sm:text-left">
+    Our skilled <span className="font-semibold">electrical team</span> ensures 
+    every connection is <em>safe, efficient,</em> and built to last.
+  </p>
+
+  <p className="text-base sm:text-lg text-midnight/80 font-serif leading-relaxed text-center sm:text-left">
+    Whether it’s enhancing the <span className="font-semibold">beauty of interiors</span> 
+    or ensuring seamless functionality, we combine 
+    <span className="font-semibold"> quality materials</span>, 
+    <span className="font-semibold"> expert techniques</span>, and 
+    <span className="font-semibold"> attention to detail</span> 
+    to bring your vision to life.
+  </p>
+</div>
+
 
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
