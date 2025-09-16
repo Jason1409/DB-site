@@ -14,7 +14,7 @@ export default function MediaCard({
     <a href={link || "#"}>
       <div className="bg-white shadow-lg rounded-xl overflow-hidden border border-[#f5e6c8] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col h-full">
         
-        <div className="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+       <div className="aspect-w-4 aspect-h-3 w-full overflow-hidden bg-gray-100">
   <MediaCarousel
     images={images}
     videos={videos}
@@ -22,6 +22,7 @@ export default function MediaCard({
     className="w-full h-full object-cover"
   />
 </div>
+
 
 
         {/* ✅ Content */}
