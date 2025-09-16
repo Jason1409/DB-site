@@ -1,4 +1,5 @@
 // tailwind.config.js
+import aspectRatio from '@tailwindcss/aspect-ratio';
 export default {
   content: [
     "./index.html",
@@ -30,5 +31,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    aspectRatio,
+  ],
 };
