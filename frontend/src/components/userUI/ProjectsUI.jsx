@@ -9,6 +9,7 @@ const ProjectsUI = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchProjects = async () => {
       try {
         const data = await getProjectsPreview(3); // Fetch 3 for preview
@@ -95,6 +96,8 @@ const ProjectsUI = () => {
                 videos={project.videos}
                 category={project.category}
                 client={project.client}
+                description={project.description}
+                partners={project.partners}
                 type="project"
                 link="/projects"
               />

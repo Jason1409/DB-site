@@ -123,14 +123,7 @@ export default function PublicLayout() {
             <br />
             <a href="tel:+971521136657"> +971 521 136 657 </a>
             <br />
-            <a
-              href="https://instagram.com/tileco"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-2 text-gray-400 hover:text-[#ff006f] transition-colors duration-300"
-            >
-              <FaInstagram size={28} />
-            </a>
+          
           </div>
 
           {/* Column 2 */}
@@ -163,7 +156,7 @@ export default function PublicLayout() {
                   to="/contact"
                   className="hover:text-[#FFD700] transition"
                 >
-                  Contact
+                  Contact Us
                 </NavLink>
               </li>
             </ul>

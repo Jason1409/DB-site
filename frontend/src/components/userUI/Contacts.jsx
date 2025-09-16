@@ -4,7 +4,11 @@ import { useForm } from "react-hook-form";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { sendContactForm } from "../../services/ctcApi";
+import { useEffect } from "react";
 export default function ContactSection() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const {
     register,
     handleSubmit,
@@ -31,7 +35,7 @@ export default function ContactSection() {
         <div className="bg-white shadow-md rounded-lg p-8 flex flex-col justify-center">
           <h2 className="text-2xl font-bold text-[#1a1a40] mb-4">Get a Free Quote</h2>
           <p className="text-gray-700 mb-8">
-            Our team of flooring experts is ready to help you choose the perfect solution for your space.
+            Our team of Engineers and experts is ready to help you choose the perfect solution for your space.
             Contact us today for a free consultation and detailed quote.
           </p>
 

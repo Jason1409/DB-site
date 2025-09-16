@@ -13,16 +13,20 @@ const DashboardLayout = () => {
   }
 
   return (
-    <div className="flex h-screen font-sans bg-[#f7f9fc] text-gray-800">
+    <div className="flex h-screen font-sans bg-[#f8fafc] text-gray-800">
       {/* Sidebar */}
-      <aside className="w-56 bg-[#1e293b] text-white flex flex-col justify-between p-4">
+      <aside className="w-64 bg-[#1e293b] text-white flex flex-col justify-between p-6">
         <div>
-          <h2 className="text-xl font-semibold mb-6 tracking-wide">Admin Dashboard</h2>
-          <nav className="flex flex-col gap-3 text-sm">
+          <h2 className="text-lg font-bold mb-8 tracking-wide text-gray-100">
+            Admin Dashboard
+          </h2>
+          <nav className="flex flex-col gap-4 text-sm">
             <NavLink
               to="projects"
               className={({ isActive }) =>
-                isActive ? "text-blue-400 font-semibold" : "hover:text-blue-300"
+                isActive
+                  ? "text-[#FFD700] font-semibold"
+                  : "text-gray-300 hover:text-[#FFD700] transition"
               }
             >
               Projects
@@ -30,7 +34,9 @@ const DashboardLayout = () => {
             <NavLink
               to="products"
               className={({ isActive }) =>
-                isActive ? "text-blue-400 font-semibold" : "hover:text-blue-300"
+                isActive
+                  ? "text-[#FFD700] font-semibold"
+                  : "text-gray-300 hover:text-[#FFD700] transition"
               }
             >
               Products
@@ -38,7 +44,9 @@ const DashboardLayout = () => {
             <NavLink
               to="contacts"
               className={({ isActive }) =>
-                isActive ? "text-blue-400 font-semibold" : "hover:text-blue-300"
+                isActive
+                  ? "text-[#FFD700] font-semibold"
+                  : "text-gray-300 hover:text-[#FFD700] transition"
               }
             >
               Contacts
@@ -48,7 +56,7 @@ const DashboardLayout = () => {
 
         <button
           onClick={handleLogout}
-          className="mt-6 bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded text-sm"
+          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg text-sm shadow transition self-center"
         >
           Logout
         </button>
@@ -57,15 +65,19 @@ const DashboardLayout = () => {
       {/* Main Area */}
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Top Header */}
-        <header className="bg-white shadow-md px-6 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gray-300 rounded-full" /> {/* Placeholder Logo */}
-            <span className="font-semibold tracking-wide">ANEES HABIB TECHNICAL SERVICES CO.L.L.C</span>
+        <header className="bg-white shadow px-6 py-4 flex justify-between items-center border-b border-gray-200">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-700">
+              AH
+            </div>
+            <span className="font-semibold tracking-wide text-gray-800">
+              ANEES HABIB TECHNICAL SERVICES CO.L.L.C
+            </span>
           </div>
         </header>
 
         {/* Dynamic content */}
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 p-8 overflow-y-auto bg-[#f9fafb]">
           <Outlet />
         </main>
       </div>

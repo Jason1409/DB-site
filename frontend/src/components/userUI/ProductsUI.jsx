@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { getProductsPreview } from "../../services/productsService";
 import MediaCard from "../../features/MediaCard";
 
-// Import local static image
+
 import servicesBanner from "../../assets/P2.avif";
 
 const ProductsUI = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const fetchProducts = async () => {
       try {
         const data = await getProductsPreview(3); // Fetch 3 for preview
