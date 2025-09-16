@@ -14,8 +14,8 @@ export default function MediaCard({
     <a href={link || "#"}>
       <div className="bg-white shadow-lg rounded-xl overflow-hidden border border-[#f5e6c8] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col h-full">
         
-        {/* ✅ Media */}
-        <div className="h-64 w-full overflow-hidden">
+        {/* ✅ Responsive Aspect Ratio */}
+        <div className="aspect-[1/1] sm:aspect-[4/3] lg:aspect-[16/9] w-full overflow-hidden bg-gray-100">
           <MediaCarousel
             images={images}
             videos={videos}
