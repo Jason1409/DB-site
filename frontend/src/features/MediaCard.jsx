@@ -19,7 +19,7 @@ export default function MediaCard({
     images={images}
     videos={videos}
     title={title}
-    className="w-full h-full object-cover"
+    className="h-full w-full object-cover"
   />
 </div>
 
