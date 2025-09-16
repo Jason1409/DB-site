@@ -64,7 +64,7 @@ export default function Home() {
           <div className="flex-1">
             <img
  src="/hero5.jpg" alt="Hero"
-              className="rounded-xl shadow-lg"
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
