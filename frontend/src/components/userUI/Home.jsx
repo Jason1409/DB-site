@@ -4,7 +4,7 @@ import { getProductsPreview } from "../../services/productsService";
 import { getProjectsPreview } from "../../services/projectsApi";
 import MediaCard from "../../features/MediaCard";
 import Anees from "../../assets/Anees.png";
-import Darshan from "../../assets/Darshan.png";
+import Darshan from "../../assets/Darshan.png"
 import Ranjith from "../../assets/Ranjith.png";
 import {Hammer, Zap, Layers, Grid, Ruler, ClipboardList} from "lucide-react";
 export default function Home() {
@@ -37,7 +37,8 @@ export default function Home() {
               Transform Your Space <br /> with <span className="text-gold">Premium Flooring</span>
             </h2>
             <p className="mb-6 text-lg text-gray-700">
-              Discover expert insights, trends, and tips from our specialists. Your dream floors are one click away.
+              At <span className="font-semibold text[#191970]"> Anees Habib Technical Services</span>, we bring precision, reliability, and innovation to every project we undertake.
+              <br></br>Discover expert insights, trends, and tips from our specialists. Your dream floors are one click away.
             </p>
             <div className="flex gap-4">
              {navB.map((link) => (
@@ -75,6 +76,8 @@ export default function Home() {
   <div className="container mx-auto px-6">
     <h2 className="text-3xl font-bold text-midnightBlue mb-10 text-center">
       Our services
+          <div className="w-20 h-1 bg-[#FFD700] mx-auto my-4 rounded"></div>
+
     </h2>
    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
    {products.map((product) => (
@@ -198,6 +201,8 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
       <span className="uppercase tracking-widest text-[20] text-midnight/70 font-semibold">
         Who We Are
       </span>
+      <div className="w-16 h-1 bg-[#FFD700] mx-auto my-4 rounded"></div>
+
     </div>
 
     <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight text-midnight">
@@ -336,7 +341,10 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
   <div className="container mx-auto px-6">
     <h2 className="text-3xl font-bold text-midnightBlue mb-10 text-center">
       Our Projects
+          <div className="w-20 h-1 bg-[#FFD700] mx-auto my-4 rounded"></div>
+
     </h2>
+
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <MediaCard
