@@ -3,9 +3,9 @@ import {NavLink} from "react-router-dom";
 import { getProductsPreview } from "../../services/productsService";
 import { getProjectsPreview } from "../../services/projectsApi";
 import MediaCard from "../../features/MediaCard";
-import Anees from "../../assets/Anees.png";
-import Darshan from "../../assets/Darshan.png"
-import Ranjith from "../../assets/Ranjith.png";
+import Anees from "../../assets/Anees.webp";
+import Darshan from "../../assets/Darshan.webp";
+import Ranjith from "../../assets/Ranjith.webp"
 import {Hammer, Zap, Layers, Grid, Ruler, ClipboardList} from "lucide-react";
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -320,7 +320,7 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
  <div className="text-center max-w-[250px]">
   <h3 className="text-lg font-semibold text-gray-900">Ranjith Acharya</h3>
   <p className="text-sm text-gray-600 mt-1">
-    Chief Operating Officer & Asst.CEO
+    Chief Operating Officer & CEO
   </p>
   <p className="text-sm italic text-gray-700 mt-3">
 “Committed to operational excellence and efficiency.”  </p>

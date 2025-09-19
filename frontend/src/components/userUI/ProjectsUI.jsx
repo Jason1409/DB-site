@@ -3,7 +3,7 @@ import { getProjectsPreview } from "../../services/projectsApi";
 import MediaCard from "../../features/MediaCard";
 
 // Import local static image
-import projectsBanner from "../../assets/P1.avif";
+import projectsBanner from "../../assets/P1.webp";
 
 const ProjectsUI = () => {
   const [projects, setProjects] = useState([]);

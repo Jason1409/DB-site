@@ -3,7 +3,7 @@ import { getProductsPreview } from "../../services/productsService";
 import MediaCard from "../../features/MediaCard";
 
 
-import servicesBanner from "../../assets/P2.avif";
+import servicesBanner from "../../assets/P2.webp";
 
 const ProductsUI = () => {
   const [products, setProducts] = useState([]);
