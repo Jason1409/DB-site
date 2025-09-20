@@ -5,7 +5,7 @@ import { getProjectsPreview } from "../../services/projectsApi";
 import MediaCard from "../../features/MediaCard";
 import Anees from "../../assets/Anees.webp";
 import Darshan from "../../assets/Darshan.webp";
-import Ranjith from "../../assets/Ranjith.webp"
+import Madan from "../../assets/Madan.webp";
 import {Hammer, Zap, Layers, Grid, Ruler, ClipboardList} from "lucide-react";
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -305,7 +305,7 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
         {/* COO */}
         <div>
           <img
-            src={Ranjith}
+            src={Madan}
             alt="COO"
             className="w-32 h-32 mx-auto rounded-full object-cover mb-4"
           />
@@ -318,14 +318,14 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
   */}
 
  <div className="text-center max-w-[250px]">
-  <h3 className="text-lg font-semibold text-gray-900">Ranjith Acharya</h3>
+  <h3 className="text-lg font-semibold text-gray-900">Madan Prem Acharya</h3>
   <p className="text-sm text-gray-600 mt-1">
     Chief Operating Officer & CEO
   </p>
   <p className="text-sm italic text-gray-700 mt-3">
 “Committed to operational excellence and efficiency.”  </p>
   <a href="mailto:ranjithachary24@gmail.com" className="mt-4 inline-block text-[#FFD700] hover:text-blue-600 font-semibold">
-    Contact Mr. Ranjith Acharya
+    Contact Mr. Madan Acharya
   </a>
 </div>
 
