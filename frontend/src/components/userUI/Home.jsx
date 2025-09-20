@@ -234,16 +234,16 @@ icon:<div className="p-3 rounded-full bg-[#FFF8DC] inline-flex items-center just
     </div>
 
     {/* Leadership Section */}
-    <div className="mt-16">
+    <div className="mt-16 max-w-6xl mx-auto px-4">
       <h3 className="text-2xl md:text-3xl font-display text-midnight text-center mb-10">
         Meet Our Leaders
       </h3>
-      <div className="grid sm:grid-cols-3 gap-8 text-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
         {/* CEO */}
         
 
         {/* CFO */}
-        <div>
+        <div className="flex flex-col items-center text-center max-w-xs">
           <img
             src={Darshan}
             alt="CFO"
