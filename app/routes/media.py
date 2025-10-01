@@ -9,7 +9,7 @@ from app.utils.cloudinary_con import upload_media, list_media, delete_media
 from app.routes.products import products_collection as products
 from app.routes.project import projects_collection as projects
 
-router = APIRouter(prefix="/media", tags=["Media"])
+router = APIRouter( tags=["Media"])
 
 
 @router.post("/upload/{folder}")

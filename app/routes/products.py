@@ -5,7 +5,7 @@ from typing import List, Optional
 from bson import ObjectId
 from pymongo import ReturnDocument
 
-router = APIRouter(prefix="/products", tags=["Products"])
+router = APIRouter( tags=["Products"])
 products_collection = db["Products"]
 
 
