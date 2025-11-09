@@ -8,10 +8,13 @@ load_dotenv()
 app = FastAPI(
     title="Bussiness API",
 )
-origin = ["http://localhost:5173",os.getenv("FRONTEND_URL","https://aneeshabibitechnicalservices.netlify.app" )]
+origins = [
+    "http://localhost:5173",
+    "https://aneeshabibitechnicalservices.netlify.app"
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origin, 
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
